@@ -1,0 +1,48 @@
+Exploratory Graphs Practice
+===========================
+
+```{r}
+# Loading Data
+pollution <- read.csv("avgpm25.csv", colClasses = c("numeric", "character", "factor", "numeric", "numeric"))
+head(pollution)
+```
+
+Try to display data
+
+1. Five Number Summary
+```{r}
+summary(pollution$pm25)
+```
+
+2. Boxplot
+```{r}
+boxplot(pollution$pm25, col = "blue")
+```
+
+3. Histogram
+```{r}
+hist(pollution$pm25, col = "green")
+```
+```{r}
+hist(pollution$pm25, col = "green", breaks = 100)
+rug(pollution$pm25)
+```
+
+
+4. Overlaying Features
+```{r}
+boxplot(pollution$pm25, col = "blue")
+abline(h = 12)
+```
+
+```{r}
+hist(pollution$pm25, col = "green")
+abline(v = 12, lwd = 2)
+abline(v = median(pollution$pm25), col = "magenta", lwd = 4)
+```
+
+5. Barplot
+```{r}
+barplot(table(pollution$region), col = "wheat", main = "# of Counties in Each Region")
+```
+
