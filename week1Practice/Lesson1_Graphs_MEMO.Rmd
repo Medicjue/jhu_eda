@@ -75,3 +75,44 @@ Simple Summary of Data
 2. Overlay/multiple 2-D plots, coplot
 3. Spinning Plots
 4. Acutal 3-D plot (but not useful)
+
+
+1. Multiple Boxplot
+```{r}
+boxplot(pm25 ~ region, data = pollution, col = "red")
+```
+
+2. Multiple Histograms
+```{r}
+par(mfrow = c(2, 1), mar = c(4, 4, 2, 1))
+hist(subset(pollution, region == "east")$pm25, col = "green")
+hist(subset(pollution, region == "west")$pm25, col = "blue")
+```
+
+
+3. Scatterplots
+```{r}
+with(pollution, plot(latitude, pm25))
+abline(h = 12, lwd = 2, lty = 2)
+```
+
+4. Scatterplots - Using Color
+```{r}
+with(pollution, plot(latitude, pm25, col = region))
+abline(h = 12, lwd = 2, lty = 2)
+```
+Black dot is EAST; Red dot is WEST
+
+5. Multiple Scatterplots
+```{r}
+par(mfrow = c(1, 2), mar = c(5, 4, 2, 1))
+with(subset(pollution, region == "west"), plot(latitude, pm25, main = "West"))
+with(subset(pollution, region == "east"), plot(latitude, pm25, main = "East"))
+```
+
+Summary
+=================
+* Exploratory plots are "QUICK and DIRTY"
+* Let you summarize the data (usually graphically) and highly any broad features
+* Explore basic questions and hypotheses (and perhaps rule them out)
+* Suggest modeling strategies for the "next step"
