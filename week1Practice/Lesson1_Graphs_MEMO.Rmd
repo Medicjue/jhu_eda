@@ -113,6 +113,9 @@ with(subset(pollution, region == "east"), plot(latitude, pm25, main = "East"))
 Summary
 =================
 * Exploratory plots are "QUICK and DIRTY"
+  * 快又有效
 * Let you summarize the data (usually graphically) and highly any broad features
 * Explore basic questions and hypotheses (and perhaps rule them out)
+  * 先把可能的問題與假設用圖形呈現與回答，然後過濾
 * Suggest modeling strategies for the "next step"
+  * 把問題限縮後，就可以思考接下來要怎麼去挖掘&解決問題
