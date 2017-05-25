@@ -1,6 +1,20 @@
 Exploratory Graphs Practice
 ===========================
 
+Principles of Analytics Graphics
+----------------------
+1. Show Comparisons: 跟什麼比很重要
+2. Show causality: 因果關係
+3. Show multivariable data: 現實是很多變數的，盡可能在圖中表現出多個變因
+	e.g 把年的資料拆成不同季節，迴歸的結果呈現不一樣
+4. Integration of Evidence: 別讓tool綁架，想用花俏的方式呈現
+5. Describe w/ appropriate label:
+6. Content is KING
+
+-----------------------
+R Code
+-----------------------
+
 ```{r}
 # Loading Data
 pollution <- read.csv("avgpm25.csv", colClasses = c("numeric", "character", "factor", "numeric", "numeric"))
@@ -46,3 +60,18 @@ abline(v = median(pollution$pm25), col = "magenta", lwd = 4)
 barplot(table(pollution$region), col = "wheat", main = "# of Counties in Each Region")
 ```
 
+
+Simple Summary of Data
+-------------------------
+2-dimension
+-------------------------
+1. multiple/overlay 1-d plots
+2. Scatterplots
+3. smooth scatterplots
+
+2-dimension to 3-Dimension
+------------------------
+1. Use Color, Size, Shape
+2. Overlay/multiple 2-D plots, coplot
+3. Spinning Plots
+4. Acutal 3-D plot (but not useful)
