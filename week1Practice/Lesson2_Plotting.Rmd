@@ -1,0 +1,83 @@
+Exploratory Graphs Practice
+===========================
+
+Base Plot
+---------------------------
+```{r}
+library(datasets)
+data(cars)
+with(cars, plot(speed, dist))
+```
+
+
+Lattice Plot
+---------------------------
+```{r}
+library(lattice)
+state <- data.frame(state.x77, region = state.region)
+xyplot(Life.Exp ~ Income | region, data = state, layout = c(4, 1))
+```
+
+
+ggplot2
+---------------------------
+```{r}
+library(ggplot2)
+data(mpg)
+qplot(displ, hwy, data = mpg)
+```
+
+Histogram
+--------------------
+```{r}
+library(datasets)
+hist(airquality$Ozone)
+```
+
+Scatterplot
+---------------------
+```{r}
+library(datasets)
+with(airquality, plot(Wind, Ozone))
+```
+
+Boxplot
+-----------------------
+```{r}
+library(datasets)
+airqualityTransformed <- transform(airquality, Month = factor(Month))
+boxplot(Ozone ~ Month, airqualityTransformed, xlab = "Month", ylab = "Ozone")
+```
+
+
+Important Graphic Parameters:
+--------------------------
+* pch: Plot符號
+* lty: 線的種類 (Line TYpe)
+* lwd: 線寬 (Line WiDth)
+* col: plot顏色 (COLor)
+* xlab: x軸的名稱
+* ylab: y軸的名稱
+* las: 軸標籤的方向
+* bg: 背景顏色
+* mar: Margin Size
+* oma: Outer Margin Size (Padding)
+* mfrow: # of plots per row, column (plots are filled row-wise) !!
+* mfcol: # of plots per row, column (plots are filled column-wise) !!
+
+```{r}
+par("bg")
+par("las")
+par("pch")
+```
+
+
+Plot Functions
+-----------------
+1. plot
+2. lines
+3. ploints
+4. text
+5. title
+6. mtext
+7. axis
